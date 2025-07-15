@@ -27,5 +27,5 @@ A modern, dark-themed developer portfolio built with **React**, **Vite**, **Tail
 
 ---
 
-## 📁 Project Structure
+
 
