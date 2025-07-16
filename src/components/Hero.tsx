@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
 
           <motion.h1
             variants={textVariants}
-            className="text-5xl md:text-7xl font-bold text-white mb-6"
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
           >
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Ankur Verma
@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.a
-              href="/Ankur_Verma_Resume.pdf"
+              href='/updatedres.pdf'
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
