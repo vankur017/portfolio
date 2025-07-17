@@ -26,8 +26,7 @@ const Navigation: React.FC = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/vankur017', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/ankur-verma-6b80b416a/', label: 'LinkedIn' },
-   { icon: Mail, href: 'mailto:vankur017@gmail.com', label: 'Email' }
-
+    { icon: Mail, href: 'mailto:vankur017@gmail.com', label: 'Email' }
   ];
 
   return (
@@ -35,10 +34,10 @@ const Navigation: React.FC = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-gray-900/95 backdrop-blur-sm' : 'bg-transparent'
+        scrolled ? 'bg-zinc-900/95 backdrop-blur-sm' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-4 relative">
         <div className="flex justify-between items-center">
           <motion.div
             initial={{ opacity: 0 }}
@@ -58,7 +57,7 @@ const Navigation: React.FC = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                className="text-gray-300 hover:text-white transition-colors relative group"
+                className="text-zinc-300 hover:text-white transition-colors relative group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full"></span>
@@ -75,7 +74,7 @@ const Navigation: React.FC = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 + 0.1 * index }}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-zinc-400 hover:text-white transition-colors"
               >
                 <link.icon size={20} />
               </motion.a>
@@ -91,41 +90,45 @@ const Navigation: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Slide-In Drawer */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 border-t border-gray-700 pt-4"
+              initial={{ opacity: 0, x: '100%' }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: '100%' }}
+              transition={{ duration: 0.3 }}
+              className="fixed top-0 right-0 w-64 h-screen bg-zinc-900 z-50 shadow-lg border-l border-zinc-800 md:hidden"
             >
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 * index }}
-                  className="block py-2 text-gray-300 hover:text-white transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </motion.a>
-              ))}
-              <div className="flex space-x-4 mt-4">
-                {socialLinks.map((link, index) => (
+              <div className="p-6 space-y-6">
+                {navItems.map((item, index) => (
                   <motion.a
-                    key={link.label}
-                    href={link.href}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2 + 0.1 * index }}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    key={item.name}
+                    href={item.href}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 * index }}
+                    className="block text-zinc-300 hover:text-white transition-colors text-lg"
+                    onClick={() => setIsOpen(false)}
                   >
-                    <link.icon size={20} />
+                    {item.name}
                   </motion.a>
                 ))}
+
+                <div className="flex space-x-4 pt-4 border-t border-zinc-800">
+                  {socialLinks.map((link, index) => (
+                    <motion.a
+                      key={link.label}
+                      href={link.href}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.2 + 0.1 * index }}
+                      className="text-zinc-400 hover:text-white transition-colors"
+                    >
+                      <link.icon size={20} />
+                    </motion.a>
+                  ))}
+                </div>
               </div>
             </motion.div>
           )}

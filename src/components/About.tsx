@@ -30,6 +30,20 @@ const About: React.FC = () => {
     }
   };
 
+  const skillsBubbleVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: (i: number) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: i * 0.1,
+        type: 'spring',
+        stiffness: 100,
+        damping: 10
+      }
+    })
+  };
+
   const features = [
     {
       icon: Code,
@@ -49,28 +63,37 @@ const About: React.FC = () => {
       description:
         "Worked with Firebase Firestore, Authentication, and Cloud Functions to build secure, scalable serverless APIs and workflows."
     },
-      {
-    icon: Rocket,
-    title: "Performance Optimization",
-    description:
-      "Improved UI performance by 40% using React-specific techniques like lazy loading, code splitting, React.memo, and conditional rendering."
+    {
+      icon: Rocket,
+      title: "Performance Optimization",
+      description:
+        "Improved UI performance by 40% using React-specific techniques like lazy loading, code splitting, React.memo, and conditional rendering."
     }
-
   ];
 
   const skills = [
-    { name: 'React.js  ', level: 95 },
-    {name:'Redux ', level: 90},
-    { name: 'TypeScript / JavaScript', level: 90 },
-    { name: 'Firebase (Auth, Firestore, Functions)', level: 90 },
-    { name: 'Tailwind CSS / CSS3', level: 88 },
-    { name: 'Jest / Cypress / React Testing Library', level: 85 },
-    { name: 'Node.js / Express.js', level: 65 },
-    { name: 'CI/CD (GitHub Actions)', level: 82 }
+    'React.js',
+    'Redux',
+    'TypeScript',
+    'JavaScript',
+    'Firebase',
+    'Tailwind CSS',
+    'Jest',
+    'Cypress',
+    'Node.js',
+    'PostgreSQL',
+    'DB2'
+    
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-900/50">
+   <section
+  id="about"
+  className="py-20 min-h-screen flex items-center justify-center relative overflow-hidden 
+      bg-gradient-to-br from-zinc-900 to-black backdrop-blur-md 
+      border-y border-zinc-800 ring-1 ring-white/5 shadow-inner"
+>
+
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -86,7 +109,7 @@ const About: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Features */}
             <motion.div variants={itemVariants}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -110,22 +133,17 @@ const About: React.FC = () => {
             {/* Skills */}
             <motion.div variants={itemVariants}>
               <h3 className="text-2xl font-bold text-white mb-8">Skills & Expertise</h3>
-              <div className="space-y-6">
-                {skills.map((skill, index) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-300">{skill.name}</span>
-                      <span className="text-indigo-400">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2">
-                      <motion.div
-                        className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-full"
-                        initial={{ width: 0 }}
-                        animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                      />
-                    </div>
-                  </div>
+              <div className="flex flex-wrap gap-4">
+                {skills.map((skill, i) => (
+                  <motion.div
+                    key={skill}
+                  className="bg-zinc-800/50 backdrop-blur-md p-6 rounded-xl border border-zinc-700 hover:border-indigo-500 transition-all duration-300"
+                    custom={i}
+                    initial="hidden"
+                    animate={inView ? 'visible' : 'hidden'}
+                  >
+                    {skill}
+                  </motion.div>
                 ))}
               </div>
             </motion.div>

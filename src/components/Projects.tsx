@@ -54,7 +54,9 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gray-900/50">
+    <section id="projects" className="py-20 min-h-screen flex items-center justify-center relative overflow-hidden 
+      bg-gradient-to-br from-zinc-900 to-black backdrop-blur-md 
+      border-y border-zinc-800 ring-1 ring-white/5 shadow-inner">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}

@@ -27,7 +27,19 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden 
+      bg-gradient-to-br from-zinc-900 to-black backdrop-blur-md 
+      border-y border-zinc-800 ring-1 ring-white/5 shadow-inner"
+    >
+      {/* Animated Background Blob */}
+      <motion.div
+        className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl -z-10"
+        animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
+        transition={{ repeat: Infinity, duration: 20, ease: 'easeInOut' }}
+      />
+
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.div
           variants={containerVariants}
@@ -35,7 +47,7 @@ const Hero: React.FC = () => {
           animate="visible"
           className="max-w-4xl mx-auto"
         >
-          <motion.div variants={textVariants} className="mb-4">
+          <motion.div className="mb-4">
             <span className="text-indigo-400 text-lg font-medium">Hi, I'm</span>
           </motion.div>
 
@@ -47,25 +59,27 @@ const Hero: React.FC = () => {
               Ankur Verma
             </span>
           </motion.h1>
-              
-                    <motion.h2
-              variants={textVariants}
-              className="text-2xl md:text-3xl text-gray-300 mb-2"
-            >
-              Associate Software Developer
-            </motion.h2>
-            <motion.p
-              variants={textVariants}
-              className="text-sm md:text-base text-indigo-300 mb-8 flex flex-wrap justify-center gap-x-2"
-            >
-              React.js | Firebase | TypeScript | JavaScript | Cypress | Jest
-            </motion.p>
-              
+
+          <motion.h2
+            variants={textVariants}
+            className="text-2xl md:text-3xl text-zinc-300 mb-2"
+          >
+            Associate Software Developer
+          </motion.h2>
+
           <motion.p
             variants={textVariants}
-            className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-sm md:text-base text-indigo-300 mb-8 flex flex-wrap justify-center gap-x-2"
           >
-          3+ years of experience building scalable and responsive web apps using React, Redux Toolkit, TypeScript, Firebase, and Tailwind CSS. Focused on performance, modular architecture, and seamless user experiences through modern development practices.
+            React.js | Firebase | TypeScript | JavaScript | Cypress | Jest
+          </motion.p>
+
+          <motion.p
+            variants={textVariants}
+            className="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+          >
+            3+ years of experience building scalable and responsive web apps using React, Redux Toolkit,
+            TypeScript, Firebase, and Tailwind CSS. Focused on performance, modular architecture, and seamless user experiences through modern development practices.
           </motion.p>
 
           <motion.div
@@ -73,7 +87,7 @@ const Hero: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.a
-              href='/updatedres.pdf'
+              href="/updatedres.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -95,20 +109,14 @@ const Hero: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Optional Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.8 }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
       >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="text-gray-400 cursor-pointer"
-        >
-          <ChevronDown size={24} />
-        </motion.div>
+        {/* You can add <ChevronDown /> or bounce animation here if needed */}
       </motion.div>
     </section>
   );
