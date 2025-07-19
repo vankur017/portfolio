@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
     image: "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=800",
     tech: ["React", "Redux", "Node.js", "Stripe", "Swiggy API"],
     github: "https://github.com/vankur017/Bite-Buddy",
-    live: "https://bite-buddy-food.netlify.app/",
+    live: "https://foodappbitebuddy.netlify.app/",
     featured: true
   }
 ];
