@@ -30,8 +30,7 @@ const Hero: React.FC = () => {
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden 
-      bg-gradient-to-br from-zinc-900 to-black backdrop-blur-md 
-      border-y border-zinc-800 ring-1 ring-white/5 shadow-inner"
+ring-1 ring-white/5 shadow-inner"
     >
       {/* Animated Background Blob */}
       <motion.div
@@ -40,7 +39,7 @@ const Hero: React.FC = () => {
         transition={{ repeat: Infinity, duration: 20, ease: 'easeInOut' }}
       />
 
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px- text-center relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -78,7 +77,7 @@ const Hero: React.FC = () => {
             variants={textVariants}
             className="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            3+ years of experience building scalable and responsive web apps using React, Redux Toolkit,
+            2+ years of experience building scalable and responsive web apps using React, Redux Toolkit,
             TypeScript, Firebase, and Tailwind CSS. Focused on performance, modular architecture, and seamless user experiences through modern development practices.
           </motion.p>
 
