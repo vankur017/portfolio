@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
     description:
       "A food delivery app clone with shopping cart, payment gateway (Stripe), and real-time restaurant listings via Swiggy live API. Backend built in Node.js which needed to run locally for now.",
     image: "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tech: ["React", "Redux", "Node.js", "Stripe", "Swiggy API"],
+    tech: ["React", "Redux", "Hooks", "Node.js", "Stripe", "Swiggy API"],
     github: "https://github.com/vankur017/Bite-Buddy",
     live: "https://foodappbitebuddy.netlify.app/",
     featured: true
