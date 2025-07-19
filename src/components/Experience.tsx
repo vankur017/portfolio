@@ -24,13 +24,11 @@ const Experience: React.FC = () => {
       "Implemented secure user authentication and session management using AWS Cognito.",
       "Created a dynamic form builder using React Hook Form with custom validation logic for XML workflows.",
       "Created unit, integration, and E2E test coverage with Jest, React Testing Library, and Cypress.",
-      "Integrated automated testing into GitHub Actions CI pipeline, reducing manual QA efforts by 60%.",
-      "Actively contributed to code reviews and pair programming sessions to maintain code quality and consistency.",
-      "Refactored legacy JavaScript codebases to TypeScript, improving maintainability and reducing bugs in production.",
+      "Integrated testing into Jenkins CI pipeline, reducing manual QA efforts by 60%.",
+      "Resolved bugs and improved maintainability by refactoring JavaScript code in a JSF-based legacy application.",
       "Worked closely with QA and backend teams to debug issues and reduce average bug resolution time by 30%.",
-      "Participated in Agile sprints: standups, story estimation, retrospectives, and sprint planning using JIRA.",
       "Integrated REST and SOAP APIs with robust error handling and retry mechanisms, improving data consistency.",
-      "Optimized build times and modularized features for faster deployments using Vite and dynamic imports."
+     
     ]
   }
 ];
@@ -59,9 +57,8 @@ const Experience: React.FC = () => {
   };
 
   return (
-    <section id="experience" className="py-20 min-h-screen flex items-center justify-center relative overflow-hidden 
-      bg-gradient-to-br from-zinc-900 to-black backdrop-blur-md 
-      border-y border-zinc-800 ring-1 ring-white/5 shadow-inner">
+    <section id="experience" className=" min-h-screen flex items-center justify-center relative overflow-hidden 
+   ring-1 ring-white/5 shadow-inner">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -72,9 +69,7 @@ const Experience: React.FC = () => {
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Experience</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              My professional journey building and testing applications
-            </p>
+          
           </motion.div>
 
           <div className="relative">

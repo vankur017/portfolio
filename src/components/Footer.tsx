@@ -12,8 +12,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className=" flex items-center justify-center relative overflow-hidden 
-      bg-gradient-to-br from-zinc-900 to-black backdrop-blur-md 
-      border-y border-zinc-800 ring-1 ring-white/5 shadow-inner">
+  border-t border-zinc-800 ring-1 ring-white/5 shadow-inner">
       <div className="container mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div

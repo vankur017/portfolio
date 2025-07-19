@@ -13,8 +13,8 @@ function App() {
   useSmoothScroll();
 
   return (
-    <div className="min-h-screen bg-zinc-900 text-white overflow-x-hidden">
-      <ParticleBackground /> {/* already styled with motion blobs */}
+    <div className="min-h-screen bg-gradient-to-br from-zinc-900 to-black text-white overflow-x-hidden backdrop-blur-md">
+      <ParticleBackground />
       <Navigation />
       <main className="relative z-10">
         <Hero />
@@ -28,4 +28,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
