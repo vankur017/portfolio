@@ -12,26 +12,36 @@ const Experience: React.FC = () => {
  const experiences = [
   {
     company: "DXC Technology",
-    position: "Associate Software Developer",
-    duration: "June 2022 – Present",
-    location: "Noida, India",
+    position: "Analyst I – Software Engineer",
+    duration: "October 2025 – Present",
+    location: "Noida, Uttar Pradesh",
     description:
-      "Contributed to building scalable, responsive web applications with React and Redux Toolkit. Collaborated across teams to transition legacy systems into modern SPAs, enhance performance, ensure code quality, and improve delivery workflows.",
+      "Working on enterprise-grade insurance platforms, modernizing legacy systems into scalable Single Page Applications using React 18 and DXC Halstack Design System. Focused on performance optimization, secure role-based access, and API-driven workflows.",
     achievements: [
-      "Converted a command-line tool to Product Loader UI a responsive web app with React + Redux, using SOAP services to generate XML file from tabular data using XMLG as service.",
-      "Developed a secure upload module to handle `.txt` and `.csv` files containing DB2 table data, which gets processed and stored in AWS S3 buckets.",
-      "Improved UI performance by 40% using lazy loading, React.memo, and conditional rendering.",
-      "Implemented secure user authentication and session management using AWS Cognito.",
-      "Created a dynamic form builder using React Hook Form with custom validation logic for XML workflows.",
-      "Created unit, integration, and E2E test coverage with Jest, React Testing Library, and Cypress.",
-      "Integrated testing into Jenkins CI pipeline, reducing manual QA efforts by 60%.",
-      "Resolved bugs and improved maintainability by refactoring JavaScript code in a JSF-based legacy application.",
-      "Worked closely with QA and backend teams to debug issues and reduce average bug resolution time by 30%.",
-      "Integrated REST and SOAP APIs with robust error handling and retry mechanisms, improving data consistency.",
-     
-    ]
-  }
+      "Migrated a legacy command-line Product Loader into a modern, responsive SPA using React 18 and dxchalstack.",
+      "Integrated REST APIs to transform relational database tables into XML for backend processing workflows.",
+      "Positioned Product Loader as a single source of truth for insurance products such as Assure Product Engine and Product Wizard.",
+      "Implemented Role-Based Access Control (RBAC) with dynamic UI rendering based on REST endpoint responses.",
+      "Optimized front-end performance using lazy loading, code splitting, memoization, and conditional rendering, improving Core Web Vitals.",
+    ],
+  },
+  {
+    company: "DXC Technology",
+    position: "Analyst II – Software Engineer",
+    duration: "June 2022 – September 2025",
+    location: "Noida, Uttar Pradesh",
+    description:
+      "Contributed to UI development, API validation, and performance testing for large-scale insurance systems, ensuring reliability, scalability, and SLA compliance across cloud-deployed applications.",
+    achievements: [
+      "Designed and developed core UI pages for the Product Delivery Loader (PDL) application with seamless navigation from the home page.",
+      "Created a comprehensive Postman test plan covering complete API user flows, from authentication to business transactions.",
+      "Led API performance testing using JMeter for high-traffic insurance applications including wmA, Cyberlife, and Assure Life.",
+      "Simulated 1,000+ concurrent users to validate transaction throughput, response times, and SLA exit criteria.",
+      "Ensured functional and performance readiness of cloud-deployed applications prior to production release.",
+    ],
+  },
 ];
+
 
 
 

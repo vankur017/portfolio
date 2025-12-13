@@ -7,7 +7,7 @@ const useSmoothScroll = () => {
   useEffect(() => {
     const lenis = new Lenis({
       smooth: true,
-      lerp: 0.1,
+      lerp: 0.5,
       direction: 'vertical'
     });
 

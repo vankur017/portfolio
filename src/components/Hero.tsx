@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section
+    <div
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden 
 ring-1 ring-white/5 shadow-inner"
@@ -117,7 +117,7 @@ ring-1 ring-white/5 shadow-inner"
       >
         {/* You can add <ChevronDown /> or bounce animation here if needed */}
       </motion.div>
-    </section>
+    </div>
   );
 };
 
