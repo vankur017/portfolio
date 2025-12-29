@@ -63,7 +63,7 @@ ring-1 ring-white/5 shadow-inner"
             variants={textVariants}
             className="text-2xl md:text-3xl text-zinc-300 mb-2"
           >
-            Associate Software Developer
+            Analyst I Software Engineer(Frontend Developer)
           </motion.h2>
 
           <motion.p
@@ -112,7 +112,7 @@ ring-1 ring-white/5 shadow-inner"
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
       >
         {/* You can add <ChevronDown /> or bounce animation here if needed */}
