@@ -63,22 +63,21 @@ ring-1 ring-white/5 shadow-inner"
             variants={textVariants}
             className="text-2xl md:text-3xl text-zinc-300 mb-2"
           >
-            Analyst I Software Engineer(Frontend Developer)
+            Frontend Developer | Analyst I Software Engineer
           </motion.h2>
 
           <motion.p
             variants={textVariants}
             className="text-sm md:text-base text-indigo-300 mb-8 flex flex-wrap justify-center gap-x-2"
           >
-            React.js | Firebase | TypeScript | JavaScript | Cypress | Jest
+            React | Redux | TypeScript | JavaScript | Firebase | Jest
           </motion.p>
 
           <motion.p
             variants={textVariants}
             className="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            2.5+ years of experience building scalable and responsive web apps using React, Redux Toolkit,
-            TypeScript, Firebase, and Tailwind CSS. Focused on performance, modular architecture, and seamless user experiences through modern development practices.
+            Frontend Developer with 3 years of experience building scalable, performance-optimized web applications using React, Redux, JavaScript, and TypeScript. Focused on reusable UI architecture, custom hooks, API-driven workflows, and delivering smooth, production-ready user experiences.
           </motion.p>
 
           <motion.div
@@ -115,7 +114,7 @@ ring-1 ring-white/5 shadow-inner"
         transition={{ delay: 0.5, duration: 0.8 }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
       >
-        {/* You can add <ChevronDown /> or bounce animation here if needed */}
+        {/* <ChevronDown /> */}
       </motion.div>
     </div>
   );

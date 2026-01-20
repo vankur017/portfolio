@@ -9,20 +9,20 @@ const Experience: React.FC = () => {
     threshold: 0.1
   });
 
- const experiences = [
+const experiences = [
   {
     company: "DXC Technology",
-    position: "Analyst I – Software Engineer",
+    position: "Analyst I – Software Engineer (Promoted)",
     duration: "October 2025 – Present",
     location: "Noida, Uttar Pradesh",
     description:
-      "Working on enterprise-grade insurance platforms, modernizing legacy systems into scalable Single Page Applications using React 18 and DXC Halstack Design System. Focused on performance optimization, secure role-based access, and API-driven workflows.",
+      "Leading frontend development for enterprise-grade insurance platforms by modernizing legacy systems into scalable Single Page Applications using React 18 and DXC Halstack (React-based design system). Focused on performance optimization, reusable UI architecture, and secure role-based access.",
     achievements: [
-      "Migrated a legacy command-line Product Loader into a modern, responsive SPA using React 18 and dxchalstack.",
-      "Integrated REST APIs to transform relational database tables into XML for backend processing workflows.",
-      "Positioned Product Loader as a single source of truth for insurance products such as Assure Product Engine and Product Wizard.",
-      "Implemented Role-Based Access Control (RBAC) with dynamic UI rendering based on REST endpoint responses.",
-      "Optimized front-end performance using lazy loading, code splitting, memoization, and conditional rendering, improving Core Web Vitals.",
+      "Designed and delivered a modern, responsive SPA by migrating a legacy Product Loader into a React 18 application using DXC Halstack.",
+      "Built reusable, data-driven UI components and custom React hooks to standardize API interactions and state handling across modules.",
+      "Implemented Role-Based Access Control (RBAC) with dynamic routing and conditional UI rendering based on API-driven permissions.",
+      "Led migration of key modules from JavaScript to TypeScript, improving type safety, maintainability, and reducing runtime issues.",
+      "Improved frontend performance by ~35% using lazy loading, code splitting, memoization (useMemo, useCallback), and optimized rendering patterns.",
     ],
   },
   {
@@ -31,16 +31,17 @@ const Experience: React.FC = () => {
     duration: "June 2022 – September 2025",
     location: "Noida, Uttar Pradesh",
     description:
-      "Contributed to UI development, API validation, and performance testing for large-scale insurance systems, ensuring reliability, scalability, and SLA compliance across cloud-deployed applications.",
+      "Worked on frontend feature development, API validation, and performance testing for large-scale insurance applications, focusing on reliability, scalability, and smooth user experience.",
     achievements: [
-      "Designed and developed core UI pages for the Product Delivery Loader (PDL) application with seamless navigation from the home page.",
-      "Created a comprehensive Postman test plan covering complete API user flows, from authentication to business transactions.",
-      "Led API performance testing using JMeter for high-traffic insurance applications including wmA, Cyberlife, and Assure Life.",
-      "Simulated 1,000+ concurrent users to validate transaction throughput, response times, and SLA exit criteria.",
-      "Ensured functional and performance readiness of cloud-deployed applications prior to production release.",
+      "Developed and enhanced core UI workflows using React, Redux, and react-router-dom for enterprise insurance modules.",
+      "Integrated REST APIs and managed global application state to support data-driven UI screens and user workflows.",
+      "Implemented client-side validations, loading states, and error handling to improve usability and resilience.",
+      "Performed performance testing using JMeter, simulating 1,000+ concurrent users to identify frontend and API bottlenecks.",
+      "Collaborated with backend and QA teams to ensure functional and performance readiness before production releases.",
     ],
   },
 ];
+
 
 
 

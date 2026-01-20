@@ -72,21 +72,20 @@ const About: React.FC = () => {
   ];
 
   const skills = [
-    'React.js',
-    'Redux',
-   
-    'JavaScript',
-    'Firebase',
-    'Tailwind CSS',
-    'Jest',
-    'Cypress',
-    'Node.js',
-    'PostgreSQL',
-    'DB2',
-    'AWS',
-    'JMeter'
-    
-  ];
+  'React.js',
+  'Redux',
+  'JavaScript',
+  'TypeScript',
+  'Firebase',
+  'Tailwind CSS',
+  'Jest',
+  'JMeter',
+  'CI/CD',
+  'Jenkins',
+  'AWS',
+  'REST APIs'
+];
+
 
   return (
    <section

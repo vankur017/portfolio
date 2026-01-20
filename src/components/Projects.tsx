@@ -9,28 +9,29 @@ const Projects: React.FC = () => {
     threshold: 0.1
   });
 
-  const projects = [
+ const projects = [
   {
     title: "Job Application Portal",
     description:
-      "A responsive job portal with animated UI, built using React, Tailwind CSS, and Framer Motion. Features a multi-step form, Firebase Auth, and cloud functions to handle job submissions.",
+      "A scalable job application platform built using React, Redux, and Firebase, focused on clean UI architecture and persistent user workflows. Includes authentication, role-based access, and API-driven job and profile management.",
     image: "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tech: ["React", "Redux", "Tailwind", "Framer Motion", "Firebase", "Serverless"],
-    github: "https://github.com/vankur017/job-portal",
+    tech: ["React", "Redux", "TypeScript", "Firebase", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/vankur017/jobportal",
     live: "https://jobportal-fpet.vercel.app/",
     featured: true
   },
   {
-    title: "Bite Buddy WebApp",
+    title: "Bite Buddy Web App",
     description:
-      "A food delivery app clone with shopping cart, payment gateway (Stripe), and real-time restaurant listings via Swiggy live API. Backend built in Node.js which needed to run locally for now.",
+      "A React-based food ordering web application featuring dynamic restaurant listings, menu rendering, and optimized state management. Built with a reusable component architecture and performance-focused rendering strategies.",
     image: "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tech: ["React", "Redux", "Hooks", "Node.js", "Stripe", "Swiggy API"],
+    tech: ["React", "Redux", "JavaScript", "Firebase", "REST APIs", "Lazy Loading"],
     github: "https://github.com/vankur017/Bite-Buddy",
     live: "https://bitebuddy-39ffc.web.app/",
     featured: true
   }
 ];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },

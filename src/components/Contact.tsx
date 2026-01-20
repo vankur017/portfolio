@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID ;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
@@ -88,10 +88,12 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" 
-    className="py-20 min-h-screen flex items-center justify-center relative overflow-hidden 
+    <section
+      id="contact"
+      className="py-20 min-h-screen flex items-center justify-center relative overflow-hidden 
       bg-gradient-to-br from-zinc-900 to-black backdrop-blur-md 
-      border-y border-zinc-800 ring-1 ring-white/5 shadow-inner">
+      border-y border-zinc-800 ring-1 ring-white/5 shadow-inner"
+    >
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -103,8 +105,8 @@ const Contact: React.FC = () => {
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              I'm always interested in hearing about new projects and opportunities. 
-              Let's create something amazing together!
+              Interested in frontend roles, collaboration opportunities, or discussing React-based projects.
+              Feel free to reach out.
             </p>
           </motion.div>
 
@@ -112,10 +114,10 @@ const Contact: React.FC = () => {
             {/* Contact Info */}
             <motion.div variants={itemVariants} className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
                 <p className="text-gray-400 mb-8">
-                  Whether you have a project in mind or just want to chat about technology, 
-                  I'd love to hear from you. Feel free to reach out through any of these channels.
+                  I’m open to frontend development opportunities and technical discussions around
+                  React, performance optimization, and scalable UI architecture.
                 </p>
               </div>
 
@@ -185,7 +187,7 @@ const Contact: React.FC = () => {
                     required
                     rows={5}
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-indigo-500 transition-colors resize-none"
-                    placeholder="Tell me about your project..."
+                    placeholder="Briefly describe your requirement or opportunity..."
                   />
                 </div>
 
