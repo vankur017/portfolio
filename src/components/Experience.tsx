@@ -9,20 +9,22 @@ const Experience: React.FC = () => {
     threshold: 0.1
   });
 
+
 const experiences = [
   {
     company: "DXC Technology",
-    position: "Analyst I – Software Engineer (Promoted)",
+    position: "Analyst I – Software Engineer",
     duration: "October 2025 – Present",
     location: "Noida, Uttar Pradesh",
     description:
-      "Leading frontend development for enterprise-grade insurance platforms by modernizing legacy systems into scalable Single Page Applications using React 18 and DXC Halstack (React-based design system). Focused on performance optimization, reusable UI architecture, and secure role-based access.",
+      "Driving frontend development and modernization of enterprise insurance applications, transforming legacy workflows into scalable and maintainable Single Page Applications using React 18, TypeScript, Redux Toolkit, and DXC Halstack.",
     achievements: [
-      "Designed and delivered a modern, responsive SPA by migrating a legacy Product Loader into a React 18 application using DXC Halstack.",
-      "Built reusable, data-driven UI components and custom React hooks to standardize API interactions and state handling across modules.",
-      "Implemented Role-Based Access Control (RBAC) with dynamic routing and conditional UI rendering based on API-driven permissions.",
-      "Led migration of key modules from JavaScript to TypeScript, improving type safety, maintainability, and reducing runtime issues.",
-      "Improved frontend performance by ~35% using lazy loading, code splitting, memoization (useMemo, useCallback), and optimized rendering patterns.",
+      "Designed and delivered a modern React 18 SPA for the Product Loader application, replacing legacy UI workflows with reusable and responsive components using DXC Halstack.",
+      "Developed reusable, data-driven React components and custom hooks to standardize API integration, state handling, validation, and UI behavior across application modules.",
+      "Implemented Role-Based Access Control (RBAC) with dynamic routing and conditional UI rendering based on API-driven user permissions.",
+      "Led the migration of key application modules from JavaScript to TypeScript, improving type safety, code maintainability, and development reliability.",
+      "Improved frontend performance by approximately 35% through lazy loading, code splitting, memoization, and optimized React rendering patterns.",
+      "Collaborated with backend, QA, and product teams to deliver production-ready features and resolve functional and integration issues.",
     ],
   },
   {
@@ -31,16 +33,18 @@ const experiences = [
     duration: "June 2022 – September 2025",
     location: "Noida, Uttar Pradesh",
     description:
-      "Worked on frontend feature development, API validation, and performance testing for large-scale insurance applications, focusing on reliability, scalability, and smooth user experience.",
+      "Developed and enhanced frontend features for enterprise insurance applications, working across UI development, REST API integration, application state management, validation, and performance testing.",
     achievements: [
-      "Developed and enhanced core UI workflows using React, Redux, and react-router-dom for enterprise insurance modules.",
-      "Integrated REST APIs and managed global application state to support data-driven UI screens and user workflows.",
-      "Implemented client-side validations, loading states, and error handling to improve usability and resilience.",
-      "Performed performance testing using JMeter, simulating 1,000+ concurrent users to identify frontend and API bottlenecks.",
-      "Collaborated with backend and QA teams to ensure functional and performance readiness before production releases.",
+      "Developed and enhanced enterprise UI workflows using React, Redux Toolkit, JavaScript, and react-router-dom across multiple insurance application modules.",
+      "Integrated REST APIs and implemented application state management to support data-driven screens, user workflows, and dynamic UI interactions.",
+      "Implemented client-side validations, loading states, error handling, and reusable UI patterns to improve application usability and reliability.",
+      "Performed performance testing using Apache JMeter with high-concurrency scenarios to identify application and API performance bottlenecks.",
+      "Worked with QA and backend teams to investigate defects, validate fixes, and ensure functional and performance readiness for production releases.",
+      "Contributed to application maintenance, troubleshooting, and modernization activities across enterprise insurance products.",
     ],
   },
 ];
+
 
 
 

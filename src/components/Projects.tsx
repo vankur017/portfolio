@@ -1,46 +1,79 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Github, Zap } from 'lucide-react';
 
-const Projects: React.FC = () => {
+const Projects = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
- const projects = [
-  {
-    title: "Job Application Portal",
-    description:
-      "A scalable job application platform built using React, Redux, and Firebase, focused on clean UI architecture and persistent user workflows. Includes authentication, role-based access, and API-driven job and profile management.",
-    image: "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tech: ["React", "Redux", "TypeScript", "Firebase", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/vankur017/jobportal",
-    live: "https://jobportal-fpet.vercel.app/",
-    featured: true
-  },
-  {
-    title: "Bite Buddy Web App",
-    description:
-      "A React-based food ordering web application featuring dynamic restaurant listings, menu rendering, and optimized state management. Built with a reusable component architecture and performance-focused rendering strategies.",
-    image: "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tech: ["React", "Redux", "JavaScript", "Firebase", "REST APIs", "Lazy Loading"],
-    github: "https://github.com/vankur017/Bite-Buddy",
-    live: "https://bitebuddy-39ffc.web.app/",
-    featured: true
-  }
-];
-
+  const projects = [
+    {
+      title: 'PortfolioLens',
+      description:
+        'A React-based portfolio analysis dashboard designed to provide users with a clear view of their investment portfolio. Supports portfolio data ingestion, normalization, allocation analysis, performance insights, and interactive visualizations through a clean and responsive interface.',
+      image: '/images/portfolio_lens.png',
+      tech: [
+        'React',
+        'JavaScript',
+        'Data Visualization',
+        'CSV Processing',
+        'Tailwind CSS',
+        'Responsive UI',
+      ],
+      github: 'https://github.com/vankur017/PortfolioLens',
+      live: 'https://portfolio-lens-sand.vercel.app/',
+      featured: true,
+    },
+    {
+      title: 'Job Application Portal',
+      description:
+        'A scalable job application platform built using React, Redux, and Firebase, focused on clean UI architecture and persistent user workflows. Includes authentication, role-based access, and API-driven job and profile management.',
+      image:
+        'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800',
+      tech: [
+        'React',
+        'Redux',
+        'TypeScript',
+        'Firebase',
+        'Tailwind CSS',
+        'Framer Motion',
+      ],
+      github: 'https://github.com/vankur017/jobportal',
+      live: 'https://jobportal-fpet.vercel.app/',
+      featured: false,
+    },
+    {
+      title: 'Bite Buddy Web App',
+      description:
+        'A React-based food ordering web application featuring dynamic restaurant listings, menu rendering, and optimized state management. Built with a reusable component architecture and performance-focused rendering strategies.',
+      image:
+        'https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=800',
+      tech: [
+        'React',
+        'Redux',
+        'JavaScript',
+        'Firebase',
+        'REST APIs',
+        'Lazy Loading',
+      ],
+      github: 'https://github.com/vankur017/Bite-Buddy',
+      live: 'https://bitebuddy-39ffc.web.app/',
+      featured: false,
+    },
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -49,29 +82,40 @@ const Projects: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   return (
-    <section id="projects" className=" min-h-screen flex items-center justify-center relative overflow-hidden 
-  shadow-inner">
+    <section
+      id="projects"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden shadow-inner"
+    >
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={inView ? 'visible' : 'hidden'}
           className="max-w-6xl mx-auto"
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
+          {/* Section Header */}
+          <motion.div
+            variants={itemVariants}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Featured Projects
+            </h2>
+
             <p className="text-gray-400 max-w-2xl mx-auto">
-              A showcase of my recent work and the technologies I've used to build them
+              A showcase of my recent work and the technologies I've used to
+              build them
             </p>
           </motion.div>
 
+          {/* Projects */}
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <motion.div
@@ -82,26 +126,56 @@ const Projects: React.FC = () => {
                   project.featured ? 'md:col-span-2' : ''
                 }`}
               >
-                <div className={`flex flex-col ${project.featured ? 'md:flex-row' : ''}`}>
-                  <div className={`relative ${project.featured ? 'md:w-1/2' : ''}`}>
+                <div
+                  className={`flex flex-col ${
+                    project.featured ? 'md:flex-row' : ''
+                  }`}
+                >
+                  {/* Project Image */}
+                  <div
+                    className={`relative ${
+                      project.featured
+                        ? 'md:w-1/2 min-h-[320px]'
+                        : 'w-full'
+                    }`}
+                  >
                     <img
                       src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 md:h-full object-cover"
+                      alt={`${project.title} project preview`}
+                      loading="lazy"
+                      className={`w-full object-cover ${
+                        project.featured
+                          ? 'h-64 md:h-full'
+                          : 'h-56'
+                      }`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
+
+                    {/* Featured Badge */}
                     {project.featured && (
-                      <div className="absolute top-4 right-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                      <div className="absolute top-4 right-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-3 py-1 rounded-full text-sm flex items-center shadow-lg">
                         <Zap size={14} className="mr-1" />
                         Featured
                       </div>
                     )}
                   </div>
-                  
-                  <div className={`p-6 ${project.featured ? 'md:w-1/2' : ''}`}>
-                    <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                    <p className="text-gray-400 mb-4">{project.description}</p>
-                    
+
+                  {/* Project Content */}
+                  <div
+                    className={`p-6 ${
+                      project.featured ? 'md:w-1/2 md:p-8' : ''
+                    }`}
+                  >
+                    <h3 className="text-xl font-bold text-white mb-3">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-gray-400 mb-5 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Technologies */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.tech.map((tech, i) => (
                         <span
@@ -112,21 +186,29 @@ const Projects: React.FC = () => {
                         </span>
                       ))}
                     </div>
-                    
-                    <div className="flex gap-4">
+
+                    {/* Project Links */}
+                    <div className="flex gap-5">
                       <motion.a
                         href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        aria-label={`View ${project.title} source code on GitHub`}
                         className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
                       >
                         <Github size={16} />
                         Code
                       </motion.a>
+
                       <motion.a
                         href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        aria-label={`View ${project.title} live demo`}
                         className="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors"
                       >
                         <ExternalLink size={16} />
@@ -145,3 +227,4 @@ const Projects: React.FC = () => {
 };
 
 export default Projects;
+
