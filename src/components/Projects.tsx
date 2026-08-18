@@ -15,7 +15,7 @@ const Projects = () => {
       title: 'PortfolioLens',
       description:
         'A React-based portfolio analysis dashboard designed to provide users with a clear view of their investment portfolio. Supports portfolio data ingestion, normalization, allocation analysis, performance insights, and interactive visualizations through a clean and responsive interface.',
-      image: '/images/portfolio_lens.png',
+      image: '/public/portfolio_lens.png',
       tech: [
         'React',
         'JavaScript',
