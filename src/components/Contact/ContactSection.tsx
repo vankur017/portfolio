@@ -73,7 +73,7 @@ export const ContactSection: React.FC = () => {
           </a>
 
           <a
-            href="https://linkedin.com/in/ankur-verma"
+            href="https://www.linkedin.com/in/ankur-verma-6b80b416a/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/20 hover:text-white transition-all group"
