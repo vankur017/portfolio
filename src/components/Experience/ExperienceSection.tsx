@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from '../../animations/gsapSetup';
-import { Building2, Calendar, Code2, Layers, Cpu, CheckCircle2 } from 'lucide-react';
+import { Building2, Calendar, Code2, Database, ShieldCheck, GitBranch } from 'lucide-react';
 
 export const ExperienceSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -41,73 +41,74 @@ export const ExperienceSection: React.FC = () => {
             PROFESSIONAL EXPERIENCE
           </h2>
           <p className="text-sm md:text-base text-zinc-400 max-w-xl mx-auto font-light">
-            UI engineering experience building enterprise web applications with React & modern frontend technologies.
+            4+ years building enterprise frontend applications at DXC Technology with React, TypeScript, and Redux Toolkit.
           </p>
         </div>
 
         {/* Experience Timeline Card */}
-        <div ref={cardRef} className="p-8 md:p-10 rounded-3xl bg-[#0D0F18]/90 border border-white/10 shadow-2xl space-y-8 backdrop-blur-xl hover:border-indigo-500/30 transition-all">
+        <div ref={cardRef} className="glass-strong glass-hover p-8 md:p-10 rounded-3xl space-y-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
             <div>
               <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs mb-1">
                 <Building2 className="w-4 h-4 text-indigo-400" />
                 <span className="font-bold text-white text-base">DXC Technology</span>
+                <span className="text-zinc-500">\u2022 Noida, India</span>
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-white font-sans">
-                UI / React Engineer
+                Analyst I &mdash; Software Engineer
               </h3>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-400">
               <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-indigo-400" /> Full-Time Role
+                <Calendar className="w-3.5 h-3.5 text-indigo-400" /> Jun 2022 &ndash; Present
               </span>
               <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
-                UI & REACT DEVELOPMENT
+                REACT &bull; TYPESCRIPT &bull; MUI
               </span>
             </div>
           </div>
 
-          {/* Key Frontend Responsibilities */}
+          {/* Key Work */}
           <div className="space-y-4">
             <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-wider">
-              CORE UI ENGINEERING RESPONSIBILITIES
+              KEY WORK AT DXC TECHNOLOGY
             </h4>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+              <div className="glass glass-hover p-4 rounded-xl space-y-2">
                 <div className="flex items-center gap-2 text-xs font-mono font-semibold text-indigo-300">
-                  <Code2 className="w-4 h-4 text-indigo-400" /> React Component Architecture
+                  <Code2 className="w-4 h-4 text-indigo-400" /> Claims Assistant (React 19 + MUI)
                 </div>
                 <p className="text-xs text-zinc-300 leading-relaxed font-sans">
-                  Developed modular, reusable React UI components using TypeScript, ensuring clean separation of presentation and state.
+                  Built the frontend for an enterprise claims application integrating with ServiceNow APIs &mdash; a reusable multi-step claim form supporting both AI-assisted (prefilled) and manual claim creation, with lifecycle actions like Save Draft, Send for Review, and Discard.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+              <div className="glass glass-hover p-4 rounded-xl space-y-2">
                 <div className="flex items-center gap-2 text-xs font-mono font-semibold text-cyan-300">
-                  <Layers className="w-4 h-4 text-cyan-400" /> Responsive Interface Engineering
+                  <Database className="w-4 h-4 text-cyan-400" /> PDL Application (React + Halstack)
                 </div>
                 <p className="text-xs text-zinc-300 leading-relaxed font-sans">
-                  Built cross-browser, responsive layouts utilizing CSS and modern design patterns to deliver consistent user experiences across devices.
+                  Designed reusable DataGrid components supporting filtering, sorting, searching, and pagination, improving consistency and maintainability across the PDL insurance application.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+              <div className="glass glass-hover p-4 rounded-xl space-y-2">
                 <div className="flex items-center gap-2 text-xs font-mono font-semibold text-purple-300">
-                  <Cpu className="w-4 h-4 text-purple-400" /> State & Data Flow Integration
+                  <ShieldCheck className="w-4 h-4 text-purple-400" /> Auth &amp; API Integration
                 </div>
                 <p className="text-xs text-zinc-300 leading-relaxed font-sans">
-                  Managed application state and integrated RESTful APIs, focusing on seamless data rendering and state predictability.
+                  Integrated REST APIs and built a reusable authentication hook for access-token lifecycle management and automatic renewal, and contributed to the OpenAM &rarr; Keycloak authentication migration.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2">
+              <div className="glass glass-hover p-4 rounded-xl space-y-2">
                 <div className="flex items-center gap-2 text-xs font-mono font-semibold text-emerald-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Frontend Quality & Craftsmanship
+                  <GitBranch className="w-4 h-4 text-emerald-400" /> Agile Delivery &amp; Quality
                 </div>
                 <p className="text-xs text-zinc-300 leading-relaxed font-sans">
-                  Collaborated on frontend implementation workflows, debugging UI issues, and refining micro-interactions for production releases.
+                  Collaborated with development, QA, DevOps, and business teams in Agile sprints &mdash; contributing to code reviews, Git-based releases, defect resolution, SAST remediation, and production deployments.
                 </p>
               </div>
             </div>

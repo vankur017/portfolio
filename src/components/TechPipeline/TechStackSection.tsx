@@ -20,7 +20,7 @@ export const TechStackSection: React.FC = () => {
     {
       id: 'react',
       step: '01',
-      title: 'React Core & Architecture',
+      title: 'React Core & Fundamentals',
       tech: 'React 18 / TypeScript',
       description: 'Declarative component design, strict type safety, custom hooks, and concurrent rendering patterns.',
       codeSnippet: `// Type-safe Generic Component Hook
@@ -46,7 +46,7 @@ export function DataGrid<T>({ data, renderItem }: ComponentProps<T>) {
     {
       id: 'components',
       step: '02',
-      title: 'Atomic Component Architecture',
+      title: 'Reusable Component Patterns',
       tech: 'TypeScript / Tailwind CSS',
       description: 'Modular, reusable design tokens, headless primitives, glassmorphism UI, and utility-first styling.',
       codeSnippet: `// Design System Token Preset
@@ -98,7 +98,7 @@ const portfolioSlice = createSlice({
     {
       id: 'api',
       step: '04',
-      title: 'API Integration & Resilience',
+      title: 'API Integration & Data',
       tech: 'REST API / Halstack',
       description: 'Debounced search hooks, async data hydration, error boundaries, and schedule integrations.',
       codeSnippet: `// Async Data Hydration Hook
@@ -194,7 +194,7 @@ export default function App() {
             THE FRONTEND PIPELINE
           </h2>
           <p className="text-sm md:text-base text-zinc-400 max-w-xl mx-auto font-light">
-            Scroll to step through the frontend pipeline connecting architectural concepts into high-performance web applications.
+            Scroll to step through the frontend pipeline connecting core frontend concepts into high-performance web applications.
           </p>
         </div>
 

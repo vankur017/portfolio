@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, Copy, Check, ArrowUpRight, Sparkles } from 'luc
 
 export const ContactSection: React.FC = () => {
   const [copied, setCopied] = useState(false);
-  const email = 'ankurverma.dev@gmail.com';
+  const email = 'ankurverma.a739@gmail.com';
 
   const copyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -43,7 +43,7 @@ export const ContactSection: React.FC = () => {
 
           <button
             onClick={copyEmail}
-            className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/5 hover:bg-white/10 text-zinc-300 border border-white/10 font-mono text-sm transition-all flex items-center justify-center gap-2 backdrop-blur active:scale-95"
+            className="glass glass-hover w-full sm:w-auto px-6 py-4 rounded-2xl text-zinc-300 font-mono text-sm flex items-center justify-center gap-2 active:scale-95"
           >
             {copied ? (
               <>
@@ -65,7 +65,7 @@ export const ContactSection: React.FC = () => {
             href="https://github.com/vankur017"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/20 hover:text-white transition-all group"
+            className="glass glass-hover flex items-center gap-2 px-4 py-2 rounded-xl hover:text-white group"
           >
             <Github className="w-4 h-4 group-hover:text-indigo-400 transition-colors" />
             <span>GitHub (vankur017)</span>
@@ -76,7 +76,7 @@ export const ContactSection: React.FC = () => {
             href="https://www.linkedin.com/in/ankur-verma-6b80b416a/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/20 hover:text-white transition-all group"
+            className="glass glass-hover flex items-center gap-2 px-4 py-2 rounded-xl hover:text-white group"
           >
             <Linkedin className="w-4 h-4 group-hover:text-cyan-400 transition-colors" />
             <span>LinkedIn</span>

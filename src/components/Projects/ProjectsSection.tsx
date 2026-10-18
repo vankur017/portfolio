@@ -64,7 +64,7 @@ export const ProjectsSection: React.FC = () => {
             SELECTED WORK
           </h2>
           <p className="text-sm md:text-base text-zinc-400 max-w-xl mx-auto font-light">
-            Interactive web applications built with performance, responsive layout precision, and atomic design system methodology.
+            Interactive web applications built with performance, responsive layouts, and reusable component patterns.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export const ProjectsSection: React.FC = () => {
             return (
               <div
                 key={project.id}
-                className="p-6 md:p-10 rounded-3xl bg-[#0C0E16]/90 border border-white/10 shadow-2xl space-y-8 backdrop-blur-xl hover:border-indigo-500/30 transition-all group"
+                className="glass-strong glass-hover p-6 md:p-10 rounded-3xl space-y-8 group"
               >
                 {/* Project Top Meta Header */}
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-white/10">

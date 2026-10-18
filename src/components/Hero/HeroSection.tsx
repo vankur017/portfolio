@@ -1,163 +1,168 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from '../../animations/gsapSetup';
-import { BrowserMockup } from './BrowserMockup';
-import { ArrowDown, Sparkles, Code, Terminal, Layers } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Code, Terminal, Sparkles } from 'lucide-react';
+
+const STATS = [
+  { value: '4+', label: 'Years Experience' },
+  { value: 'DXC', label: 'Technology' },
+  { value: '3', label: 'Featured Projects' },
+  { value: 'React', label: 'TypeScript · Redux' },
+];
 
 export const HeroSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const heroContentRef = useRef<HTMLDivElement>(null);
-  const mockupRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+  const wordmarkRef = useRef<HTMLHeadingElement>(null);
+  const roleRef = useRef<HTMLDivElement>(null);
+  const taglineRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Intro animation sequence on load
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      tl.fromTo(
-        badgeRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
-      )
+      tl.fromTo(badgeRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 })
         .fromTo(
-          titleRef.current,
-          { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 1, ease: 'power3.out' },
-          '-=0.4'
+          wordmarkRef.current,
+          { opacity: 0, y: 40, filter: 'blur(14px)' },
+          { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.1 },
+          '-=0.3'
         )
+        .fromTo(roleRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.6')
+        .fromTo(taglineRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
+        .fromTo(ctaRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.4')
         .fromTo(
-          subtitleRef.current,
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
-          '-=0.5'
+          statsRef.current?.children ? Array.from(statsRef.current.children) : [],
+          { opacity: 0, y: 30, scale: 0.9 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.7, stagger: 0.1, ease: 'back.out(1.4)' },
+          '-=0.3'
         )
-        .fromTo(
-          scrollIndicatorRef.current,
-          { opacity: 0, y: -10 },
-          { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
-          '-=0.2'
-        )
-        .fromTo(
-          mockupRef.current,
-          { opacity: 0.2, scale: 0.75, y: 80, rotateX: 15 },
-          { opacity: 1, scale: 1, y: 0, rotateX: 0, duration: 1.2, ease: 'power3.out' },
-          '-=0.8'
-        );
+        .fromTo(scrollRef.current, { opacity: 0 }, { opacity: 1, duration: 0.6 }, '-=0.2');
 
-      // ScrollTrigger for assembly and morphing on scroll
-      if (containerRef.current && mockupRef.current) {
-        gsap.timeline({
+      // Gentle parallax drift on the wordmark as the hero scrolls away.
+      // Keep full opacity so the name is always visible when scrolling back.
+      if (containerRef.current && wordmarkRef.current) {
+        gsap.to(wordmarkRef.current, {
+          yPercent: -12,
+          ease: 'none',
           scrollTrigger: {
             trigger: containerRef.current,
             start: 'top top',
             end: 'bottom top',
             scrub: 1,
-            pin: true,
-            anticipatePin: 1,
           },
-        })
-          .to(heroContentRef.current, {
-            opacity: 0,
-            y: -60,
-            scale: 0.95,
-            ease: 'none',
-          })
-          .to(
-            mockupRef.current,
-            {
-              scale: 1.08,
-              y: -80,
-              boxShadow: '0 30px 90px rgba(99, 102, 241, 0.25)',
-              ease: 'none',
-            },
-            '<'
-          )
-          .to(scrollIndicatorRef.current, { opacity: 0, ease: 'none' }, '<');
+        });
       }
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen w-full flex flex-col items-center justify-between pt-24 pb-12 px-4 md:px-8 bg-[#08090B] overflow-hidden selection:bg-indigo-500/30"
+      className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 pt-28 pb-16 overflow-hidden"
     >
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* Ambient lighting blobs */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[720px] bg-indigo-600/15 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-10 left-1/4 w-[460px] h-[460px] bg-cyan-500/12 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-lines opacity-[0.5] pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
 
-      {/* Hero Header Content */}
-      <div
-        ref={heroContentRef}
-        className="text-center max-w-4xl mx-auto z-10 flex flex-col items-center space-y-6 pt-4"
-      >
-        {/* Status Badge */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center text-center">
+        {/* Availability badge */}
         <div
           ref={badgeRef}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md text-xs font-mono text-indigo-300"
+          className="glass inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono text-indigo-200"
         >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500" />
           </span>
-          <span>AVAILABLE FOR UI ARCHITECTURE & REACT ROLES</span>
+          <span>AVAILABLE FOR REACT &amp; FRONTEND ROLES</span>
         </div>
 
-        {/* Large Name & Title */}
-        <div className="space-y-2">
-          <h1
-            ref={titleRef}
-            className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white font-sans uppercase"
-          >
-            ANKUR VERMA
-          </h1>
-          <div className="flex items-center justify-center gap-3 text-sm md:text-base font-mono tracking-widest text-indigo-400 uppercase font-semibold">
-            <Code className="w-4 h-4 text-cyan-400" />
-            <span>UI / REACT ENGINEER</span>
-            <Terminal className="w-4 h-4 text-indigo-400" />
-          </div>
-        </div>
-
-        {/* Primary Statement */}
-        <p
-          ref={subtitleRef}
-          className="text-lg sm:text-xl md:text-2xl font-light text-zinc-300 max-w-2xl mx-auto leading-relaxed tracking-wide"
+        {/* Giant wordmark */}
+        <h1
+          ref={wordmarkRef}
+          className="mt-8 font-display font-bold uppercase leading-[0.82] tracking-tight text-wordmark text-[clamp(3.2rem,15vw,12rem)]"
         >
-          "I build digital experiences that feel as good as they look."
-        </p>
+          Ankur
+          <br />
+          Verma
+        </h1>
 
-        {/* Decorative Floating Tech Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-2 pt-2 text-xs font-mono text-zinc-400">
-          <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 flex items-center gap-1.5">
-            <Sparkles className="w-3 h-3 text-amber-400" /> Micro-Interactions
-          </span>
-          <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 flex items-center gap-1.5">
-            <Layers className="w-3 h-3 text-indigo-400" /> Component Systems
-          </span>
-          <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">
-            60 FPS Animations
-          </span>
+        {/* Role line */}
+        <div
+          ref={roleRef}
+          className="mt-6 flex items-center justify-center gap-3 text-sm md:text-base font-mono tracking-[0.3em] text-indigo-300 uppercase font-semibold"
+        >
+          <Code className="w-4 h-4 text-cyan-400" />
+          <span>Software Engineer</span>
+          <Terminal className="w-4 h-4 text-indigo-400" />
+        </div>
+
+        {/* Tagline in a glass panel */}
+        <div
+          ref={taglineRef}
+          className="glass glass-hover mt-8 max-w-2xl rounded-2xl px-6 py-5"
+        >
+          <p className="text-base md:text-lg font-light text-zinc-200 leading-relaxed">
+            I build digital experiences that feel as good as they look — crafting
+            scalable, component-driven interfaces with motion, precision, and polish.
+          </p>
+        </div>
+
+        {/* CTAs */}
+        <div ref={ctaRef} className="mt-8 flex flex-col sm:flex-row items-center gap-3">
+          <button
+            onClick={() => scrollTo('projects')}
+            className="group px-7 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-sm font-semibold transition-all flex items-center gap-2 shadow-xl shadow-indigo-600/25 active:scale-95"
+          >
+            <Sparkles className="w-4 h-4" />
+            <span>View Selected Work</span>
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </button>
+          <button
+            onClick={() => scrollTo('contact')}
+            className="glass glass-hover px-7 py-3.5 rounded-2xl text-zinc-100 font-mono text-sm font-medium flex items-center gap-2 active:scale-95"
+          >
+            <span>Get In Touch</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* Glass stat cards */}
+        <div
+          ref={statsRef}
+          className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 w-full max-w-3xl"
+        >
+          {STATS.map((stat) => (
+            <div
+              key={stat.label}
+              className="glass glass-hover rounded-2xl px-4 py-5 flex flex-col items-center gap-1"
+            >
+              <span className="font-display text-2xl md:text-3xl font-bold text-gradient-accent">
+                {stat.value}
+              </span>
+              <span className="text-[10px] md:text-[11px] font-mono uppercase tracking-wider text-zinc-400 text-center">
+                {stat.label}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Morphing Browser UI Assembly Container */}
+      {/* Scroll indicator */}
       <div
-        ref={mockupRef}
-        className="w-full z-20 my-auto transform-gpu transition-all duration-300"
-      >
-        <BrowserMockup />
-      </div>
-
-      {/* Scroll Indicator */}
-      <div
-        ref={scrollIndicatorRef}
-        className="z-10 flex flex-col items-center gap-2 text-xs font-mono text-zinc-400 tracking-widest pt-4"
+        ref={scrollRef}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-xs font-mono text-zinc-400 tracking-widest"
       >
         <span className="animate-bounce flex items-center gap-1">
           SCROLL TO EXPLORE <ArrowDown className="w-3 h-3 text-indigo-400" />

@@ -33,7 +33,7 @@ export const JobPortalDemo: React.FC = () => {
     },
     {
       id: 3,
-      title: 'Design System Architect',
+      title: 'Design System Engineer',
       company: 'Stripe Product UI',
       location: 'Remote',
       salary: '$150k - $185k',

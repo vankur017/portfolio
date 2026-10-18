@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
           <span className="text-zinc-400 font-bold">ANKUR VERMA</span>
           <span>© {new Date().getFullYear()}</span>
           <span>•</span>
-          <span>UI / REACT ENGINEER</span>
+          <span>SOFTWARE ENGINEER</span>
         </div>
 
         <div className="flex items-center gap-2 text-zinc-400">

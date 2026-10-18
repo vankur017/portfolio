@@ -8,11 +8,11 @@ export const AboutSection: React.FC = () => {
   const gridRef = useRef<HTMLDivElement>(null);
 
   const engineeringPillars = [
-    'UI Engineering & Architecture',
+    'UI Engineering & Development',
     'React & Component-Driven Systems',
     'Responsive & Fluid Interfaces',
     'User Experience Micro-Interactions',
-    'State Resilience & TypeScript Safety',
+    'State Management & TypeScript',
     'Production Quality Delivery',
   ];
 
@@ -59,7 +59,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section ref={containerRef} id="about" className="py-24 px-4 md:px-8 bg-[#06070B] relative overflow-hidden">
       <div className="max-w-4xl mx-auto space-y-10 text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-indigo-300">
+        <div className="glass inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono text-indigo-300">
           <Sparkles className="w-3.5 h-3.5 text-indigo-400" /> ABOUT MY APPROACH
         </div>
 
@@ -72,7 +72,7 @@ export const AboutSection: React.FC = () => {
           {engineeringPillars.map((pillar) => (
             <div
               key={pillar}
-              className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 text-zinc-300 flex items-center justify-center gap-2 hover:border-indigo-500/30 transition-colors text-center"
+              className="glass glass-hover p-3.5 rounded-xl text-zinc-300 flex items-center justify-center gap-2 text-center"
             >
               <CheckCircle className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
               <span>{pillar}</span>

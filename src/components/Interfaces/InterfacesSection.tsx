@@ -94,7 +94,7 @@ export const InterfacesSection: React.FC = () => {
         </h2>
 
         <p className="text-sm md:text-base text-zinc-400 max-w-xl mx-auto font-light">
-          Real production UI engineered with state resilience, fluid physics, accessible keyboard controls, and sub-frame rendering speed.
+          Real production UI built with solid state handling, fluid physics, accessible keyboard controls, and smooth rendering speed.
         </p>
       </div>
 

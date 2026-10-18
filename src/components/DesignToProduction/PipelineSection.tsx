@@ -100,13 +100,13 @@ export const PipelineSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center space-y-3">
           <span className="text-xs font-mono text-emerald-400 tracking-widest uppercase">
-            END-TO-END METHODOLOGY (SCROLL CONTROLLED)
+            END-TO-END WORKFLOW (SCROLL CONTROLLED)
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-sans uppercase">
             DESIGN → PRODUCTION
           </h2>
           <p className="text-sm md:text-base text-zinc-400 max-w-xl mx-auto font-light">
-            Scroll down to watch how a raw blueprint concept progressively transforms into an enterprise production component.
+            Scroll down to watch how a raw blueprint concept progressively transforms into a production-ready component.
           </p>
         </div>
 
@@ -232,7 +232,7 @@ export const PipelineSection: React.FC = () => {
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="text-base font-bold text-white">Ankur Verma</h4>
-                    <p className="text-xs text-indigo-300 font-mono">UI / React Engineer</p>
+                    <p className="text-xs text-indigo-300 font-mono">Software Engineer</p>
                   </div>
                   <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-[10px] border border-emerald-500/30">
                     60 FPS PRODUCTION
