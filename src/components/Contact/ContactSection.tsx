@@ -1,89 +1,89 @@
-import React, { useState } from 'react';
-import { Mail, Github, Linkedin, Copy, Check, ArrowUpRight, Sparkles } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
+import { SectionHeader } from '../ui/SectionHeader';
 
-export const ContactSection: React.FC = () => {
+const EMAIL = 'ankurverma.a739@gmail.com';
+
+const LINKS = [
+  { label: 'GitHub', detail: 'github.com/vankur017', href: 'https://github.com/vankur017' },
+  { label: 'LinkedIn', detail: 'in/ankur-verma', href: 'https://www.linkedin.com/in/ankur-verma-6b80b416a/' },
+  { label: 'Résumé', detail: 'PDF', href: '/updateres.pdf' },
+];
+
+export function ContactSection() {
   const [copied, setCopied] = useState(false);
-  const email = 'ankurverma.a739@gmail.com';
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  useEffect(() => {
+    if (!copied) return;
+    const timer = window.setTimeout(() => setCopied(false), 2000);
+    return () => window.clearTimeout(timer);
+  }, [copied]);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+    } catch {
+      // Clipboard unavailable (e.g. insecure context) — fall back to mail client
+      window.location.href = `mailto:${EMAIL}`;
+    }
   };
 
   return (
-    <section id="contact" className="py-28 px-4 md:px-8 bg-[#050609] relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-indigo-600/10 rounded-full blur-[180px] pointer-events-none" />
+    <section id="contact" aria-labelledby="contact-title" className="page pb-24 pt-24 md:pb-32 md:pt-32">
+      <SectionHeader index="04" label="Contact" title="Have a frontend role or project in mind?" titleId="contact-title" />
 
-      <div className="max-w-5xl mx-auto space-y-16 text-center relative z-10">
-        {/* Large Typography Header */}
-        <div className="space-y-4">
-          <span className="text-xs font-mono text-indigo-400 tracking-widest uppercase">
-            START A CONVERSATION
-          </span>
-          <h2 className="text-4xl sm:text-7xl md:text-8xl font-black text-white uppercase tracking-tight leading-none font-sans">
-            LET'S BUILD <br />
-            <span className="text-gradient bg-gradient-to-r from-indigo-300 via-purple-300 to-cyan-300">
-              SOMETHING GREAT.
+      <div className="mt-14 grid-page md:mt-20">
+        <div className="col-span-12 md:col-span-9 md:col-start-4">
+          <p className="max-w-prose text-lg leading-relaxed text-ink-soft">
+            Email is the quickest way to reach me. I&rsquo;m open to React and frontend roles.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-baseline gap-x-6 gap-y-3">
+            <a
+              href={`mailto:${EMAIL}`}
+              className="font-display text-[clamp(1.75rem,4.6vw,3.5rem)] leading-tight text-ink underline decoration-ink/30 decoration-1 underline-offset-[0.18em] transition-colors [overflow-wrap:anywhere] hover:text-accent hover:decoration-accent"
+            >
+              {EMAIL}
+            </a>
+            <button
+              type="button"
+              onClick={copyEmail}
+              className="font-mono text-xs uppercase tracking-[0.14em] text-ink-muted transition-colors hover:text-ink"
+            >
+              {copied ? 'Copied' : 'Copy address'}
+            </button>
+            <span role="status" aria-live="polite" className="sr-only">
+              {copied ? 'Email address copied to clipboard' : ''}
             </span>
-          </h2>
-        </div>
+          </div>
 
-        {/* Email & Copy Button Box */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
-          <a
-            href={`mailto:${email}`}
-            className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-sm font-semibold transition-all flex items-center justify-center gap-3 shadow-xl shadow-indigo-600/20 active:scale-95"
-          >
-            <Mail className="w-4 h-4" />
-            <span>Send An Email</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </a>
-
-          <button
-            onClick={copyEmail}
-            className="glass glass-hover w-full sm:w-auto px-6 py-4 rounded-2xl text-zinc-300 font-mono text-sm flex items-center justify-center gap-2 active:scale-95"
-          >
-            {copied ? (
-              <>
-                <Check className="w-4 h-4 text-emerald-400" />
-                <span className="text-emerald-300">Email Copied!</span>
-              </>
-            ) : (
-              <>
-                <Copy className="w-4 h-4" />
-                <span>Copy Email</span>
-              </>
-            )}
-          </button>
-        </div>
-
-        {/* Social Links Row */}
-        <div className="flex items-center justify-center gap-6 pt-8 font-mono text-xs text-zinc-400 border-t border-white/5">
-          <a
-            href="https://github.com/vankur017"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glass glass-hover flex items-center gap-2 px-4 py-2 rounded-xl hover:text-white group"
-          >
-            <Github className="w-4 h-4 group-hover:text-indigo-400 transition-colors" />
-            <span>GitHub (vankur017)</span>
-            <ArrowUpRight className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100" />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/ankur-verma-6b80b416a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glass glass-hover flex items-center gap-2 px-4 py-2 rounded-xl hover:text-white group"
-          >
-            <Linkedin className="w-4 h-4 group-hover:text-cyan-400 transition-colors" />
-            <span>LinkedIn</span>
-            <ArrowUpRight className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100" />
-          </a>
+          <ul className="mt-14 grid border-t border-line sm:grid-cols-3">
+            {LINKS.map((link) => (
+              <li key={link.label} className="border-b border-line sm:border-b-0 sm:border-r sm:last:border-r-0">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start justify-between gap-4 py-5 sm:px-5 sm:first:pl-0"
+                >
+                  <span>
+                    <span className="block font-medium text-ink transition-colors group-hover:text-accent">
+                      {link.label}
+                    </span>
+                    <span className="mt-1 block font-mono text-xs text-ink-muted">{link.detail}</span>
+                  </span>
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-ink-muted transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+                  />
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
   );
-};
+}

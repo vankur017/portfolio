@@ -1,31 +1,51 @@
-# 🌐 Ankur Verma — Developer Portfolio
+# Ankur Verma — Developer Portfolio
 
-A modern, dark-themed developer portfolio built with **React**, **Vite**, **Tailwind CSS**, **Framer Motion**, and **EmailJS** — showcasing professional experience, projects, and a contact form that sends email directly.
+Personal portfolio of Ankur Verma, a frontend-focused software engineer. A single-page site with selected projects, experience, and contact details.
 
-## 🚀 Live Demo
+**Live:** https://portfolio-one-mocha-85.vercel.app/
 
-🔗 [View Live](https://your-vercel-url.vercel.app)
+## Tech stack
 
-## ✨ Features
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- lucide-react (icons)
 
-- ⚛️ React (with TypeScript) & Vite for blazing-fast builds
-- 🎨 Tailwind CSS for elegant, responsive design
-- 🎞️ Framer Motion for smooth animations
-- 📬 Contact form integrated with EmailJS (sends mail to your inbox)
-- 💼 Projects & Experience driven by structured data
-- 🌓 Dark mode interface inspired by modern dev aesthetics
-- 🔒 Environment variables for secure deployment
+## Getting started
 
----
+```bash
+npm install
+npm run dev      # start the dev server
+npm run build    # production build to dist/
+npm run lint     # ESLint
+```
 
-## 📂 Tech Stack
+## Project structure
 
-- **Frontend**: React, Vite, TypeScript
-- **Styling**: Tailwind CSS, Framer Motion
-- **Email Service**: EmailJS (client-side)
-- **Deployment**: Vercel
+```
+src/
+├── App.tsx                  # page composition
+├── index.css                # base styles and shared classes
+├── data/projectsData.ts     # project content and screenshots
+└── components/
+    ├── Navigation/Navbar.tsx
+    ├── Hero/HeroSection.tsx
+    ├── Projects/ProjectsSection.tsx
+    ├── Experience/ExperienceSection.tsx
+    ├── About/AboutSection.tsx
+    ├── Contact/ContactSection.tsx
+    ├── Footer.tsx
+    └── ui/SectionHeader.tsx
+public/
+├── projects/                # optimised project screenshots (.webp)
+└── updateres.pdf            # résumé
+```
 
----
+## Theming
 
+Colours and fonts live in `tailwind.config.js`. The palette uses semantic names: `paper` for backgrounds, `ink` for text, `line` for dividers, and `accent` for the single accent colour. Change the values there to re-theme the site.
 
+## Adding a project screenshot
 
+1. Save the image as `.webp` in `public/projects/`.
+2. Add an `image` entry with `src`, `srcSet`, `width`, `height` and `alt` to the project in `src/data/projectsData.ts`.

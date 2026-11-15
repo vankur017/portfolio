@@ -1,120 +1,65 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from '../../animations/gsapSetup';
-import { Building2, Calendar, Code2, Database, ShieldCheck, GitBranch } from 'lucide-react';
+import { SectionHeader } from '../ui/SectionHeader';
 
-export const ExperienceSection: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
+const KEY_WORK = [
+  {
+    title: 'Claims Assistant',
+    stack: 'React 19 · MUI',
+    body: 'Built the frontend for an enterprise claims application integrating with ServiceNow APIs — a reusable multi-step claim form supporting both AI-assisted (prefilled) and manual claim creation, with lifecycle actions like Save Draft, Send for Review, and Discard.',
+  },
+  {
+    title: 'PDL application',
+    stack: 'React · Halstack',
+    body: 'Designed reusable DataGrid components supporting filtering, sorting, searching, and pagination, improving consistency and maintainability across the PDL insurance application.',
+  },
+  {
+    title: 'Authentication & API integration',
+    stack: 'REST · Keycloak',
+    body: 'Integrated REST APIs and built a reusable authentication hook for access-token lifecycle management and automatic renewal, and contributed to the OpenAM → Keycloak authentication migration.',
+  },
+  {
+    title: 'Agile delivery & quality',
+    stack: 'Git · SAST',
+    body: 'Collaborated with development, QA, DevOps, and business teams in Agile sprints — contributing to code reviews, Git-based releases, defect resolution, SAST remediation, and production deployments.',
+  },
+];
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        cardRef.current,
-        { opacity: 0, y: 60, scale: 0.95 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
+export function ExperienceSection() {
   return (
-    <section ref={containerRef} id="experience" className="py-24 px-4 md:px-8 bg-[#07080B] relative">
-      <div className="max-w-5xl mx-auto space-y-12">
-        {/* Section Header */}
-        <div className="text-center space-y-3">
-          <span className="text-xs font-mono text-indigo-400 tracking-widest uppercase">
-            CAREER HISTORY
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-sans uppercase">
-            PROFESSIONAL EXPERIENCE
-          </h2>
-          <p className="text-sm md:text-base text-zinc-400 max-w-xl mx-auto font-light">
-            4+ years building enterprise frontend applications at DXC Technology with React, TypeScript, and Redux Toolkit.
+    <section id="experience" aria-labelledby="experience-title" className="page py-24 md:py-32">
+      <SectionHeader index="02" label="Experience" title="Four years at DXC Technology" titleId="experience-title" />
+
+      <div className="mt-14 grid-page gap-y-8 md:mt-20">
+        <div className="col-span-12 md:col-span-3">
+          <p className="font-mono text-sm text-ink">
+            <time dateTime="2022-06">Jun 2022</time> — Present
           </p>
+          <p className="mt-1 text-sm text-ink-muted">Noida, India</p>
         </div>
 
-        {/* Experience Timeline Card */}
-        <div ref={cardRef} className="glass-strong glass-hover p-8 md:p-10 rounded-3xl space-y-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
-            <div>
-              <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs mb-1">
-                <Building2 className="w-4 h-4 text-indigo-400" />
-                <span className="font-bold text-white text-base">DXC Technology</span>
-                <span className="text-zinc-500">\u2022 Noida, India</span>
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-white font-sans">
-                Analyst I &mdash; Software Engineer
-              </h3>
-            </div>
+        <div className="col-span-12 md:col-span-9">
+          <h3 className="text-2xl font-medium tracking-tight text-ink md:text-[1.75rem]">
+            Analyst I — Software Engineer
+          </h3>
+          <p className="mt-1 text-lg text-ink-soft">DXC Technology</p>
+          <p className="mt-5 max-w-prose leading-relaxed text-ink-soft">
+            Building enterprise frontend applications with React, TypeScript and Redux Toolkit.
+          </p>
 
-            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-400">
-              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-indigo-400" /> Jun 2022 &ndash; Present
-              </span>
-              <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
-                REACT &bull; TYPESCRIPT &bull; MUI
-              </span>
-            </div>
-          </div>
-
-          {/* Key Work */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-wider">
-              KEY WORK AT DXC TECHNOLOGY
-            </h4>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="glass glass-hover p-4 rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-indigo-300">
-                  <Code2 className="w-4 h-4 text-indigo-400" /> Claims Assistant (React 19 + MUI)
-                </div>
-                <p className="text-xs text-zinc-300 leading-relaxed font-sans">
-                  Built the frontend for an enterprise claims application integrating with ServiceNow APIs &mdash; a reusable multi-step claim form supporting both AI-assisted (prefilled) and manual claim creation, with lifecycle actions like Save Draft, Send for Review, and Discard.
+          <ol className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+            {KEY_WORK.map((item, i) => (
+              <li key={item.title} className="border-t border-line pt-5">
+                <p className="font-mono text-xs text-ink-muted">
+                  <span className="text-ink">{String(i + 1).padStart(2, '0')}</span>
+                  <span aria-hidden="true"> · </span>
+                  {item.stack}
                 </p>
-              </div>
-
-              <div className="glass glass-hover p-4 rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-cyan-300">
-                  <Database className="w-4 h-4 text-cyan-400" /> PDL Application (React + Halstack)
-                </div>
-                <p className="text-xs text-zinc-300 leading-relaxed font-sans">
-                  Designed reusable DataGrid components supporting filtering, sorting, searching, and pagination, improving consistency and maintainability across the PDL insurance application.
-                </p>
-              </div>
-
-              <div className="glass glass-hover p-4 rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-purple-300">
-                  <ShieldCheck className="w-4 h-4 text-purple-400" /> Auth &amp; API Integration
-                </div>
-                <p className="text-xs text-zinc-300 leading-relaxed font-sans">
-                  Integrated REST APIs and built a reusable authentication hook for access-token lifecycle management and automatic renewal, and contributed to the OpenAM &rarr; Keycloak authentication migration.
-                </p>
-              </div>
-
-              <div className="glass glass-hover p-4 rounded-xl space-y-2">
-                <div className="flex items-center gap-2 text-xs font-mono font-semibold text-emerald-300">
-                  <GitBranch className="w-4 h-4 text-emerald-400" /> Agile Delivery &amp; Quality
-                </div>
-                <p className="text-xs text-zinc-300 leading-relaxed font-sans">
-                  Collaborated with development, QA, DevOps, and business teams in Agile sprints &mdash; contributing to code reviews, Git-based releases, defect resolution, SAST remediation, and production deployments.
-                </p>
-              </div>
-            </div>
-          </div>
+                <h4 className="mt-3 text-lg font-medium text-ink">{item.title}</h4>
+                <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">{item.body}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
   );
-};
+}
