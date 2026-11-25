@@ -27,6 +27,38 @@ export interface ProjectItem {
 
 export const PROJECTS_DATA: ProjectItem[] = [
   {
+    id: 'mintline',
+    title: 'Mintline',
+    tagline: 'Play-Money Casino Arcade',
+    summary:
+      'Full-stack play-money arcade with four games (Crash, Plinko, Mines and Dice), all using virtual coins. Animated with Phaser 3, with outcomes decided by an Express API.',
+    description:
+      'A play-money casino arcade with four original games: Crash, Plinko, Mines and Dice. React owns the stake forms, wallet and history. Phaser 3 scenes only replay results the server has already decided. The Express 5 API owns all game rules and the wallet ledger, and every bet request needs an idempotency key. Amounts are stored as integers in minor units. Mines uses real buttons so it works with a keyboard and screen readers. The frontend is on Vercel and the API runs on Google Cloud Run with continuous deployment.',
+    category: 'Gaming / Full-Stack',
+    technologies: [
+      'React 19',
+      'TypeScript',
+      'Vite',
+      'Tailwind CSS v4',
+      'Phaser 3',
+      'React Router 7',
+      'Node.js',
+      'Express 5',
+      'Vitest',
+      'Google Cloud Run',
+    ],
+    metrics: ['Server-Decided Outcomes', 'Idempotent Bet API', 'Canvas-Rendered Game Scenes'],
+    githubUrl: 'https://github.com/vankur017/betting-app-frontend',
+    liveUrl: 'https://betting-app-frontend-alpha.vercel.app/',
+    image: {
+      src: '/projects/mintline-1600.webp',
+      srcSet: '/projects/mintline-960.webp 960w, /projects/mintline-1600.webp 1600w',
+      width: 1600,
+      height: 873,
+      alt: 'Screenshot of the Mintline game lobby',
+    },
+  },
+  {
     id: 'portfoliolens',
     title: 'PortfolioLens',
     tagline: 'Investment Portfolio Analytics Platform',
@@ -59,10 +91,10 @@ export const PROJECTS_DATA: ProjectItem[] = [
     githubUrl: 'https://github.com/vankur017/Bite-Buddy',
     liveUrl: 'https://bitebuddy-39ffc.web.app/',
     image: {
-      src: '/projects/bitebuddy-778.webp',
-      srcSet: '/projects/bitebuddy-778.webp 778w',
-      width: 778,
-      height: 457,
+      src: '/projects/bitebuddy-1600.webp',
+      srcSet: '/projects/bitebuddy-960.webp 960w, /projects/bitebuddy-1600.webp 1600w',
+      width: 1600,
+      height: 873,
       alt: 'Screenshot of the Bite Buddy restaurant listing page',
     },
   },
@@ -79,10 +111,10 @@ export const PROJECTS_DATA: ProjectItem[] = [
     githubUrl: 'https://github.com/vankur017/jobportal',
     liveUrl: 'https://jobportal-fpet.vercel.app/',
     image: {
-      src: '/projects/jobportal-778.webp',
-      srcSet: '/projects/jobportal-778.webp 778w',
-      width: 778,
-      height: 449,
+      src: '/projects/jobportal-1600.webp',
+      srcSet: '/projects/jobportal-960.webp 960w, /projects/jobportal-1600.webp 1600w',
+      width: 1600,
+      height: 873,
       alt: 'Screenshot of the Job Application Portal home page with resume upload and job search',
     },
   },
